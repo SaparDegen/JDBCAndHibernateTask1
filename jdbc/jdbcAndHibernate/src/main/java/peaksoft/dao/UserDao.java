@@ -1,7 +1,6 @@
 package peaksoft.dao;
 
 import peaksoft.model.User;
-
 import java.util.List;
 
 public interface UserDao {
