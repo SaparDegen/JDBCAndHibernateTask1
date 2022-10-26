@@ -2,7 +2,6 @@ package peaksoft.dao;
 
 import peaksoft.model.User;
 import peaksoft.util.Util;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +16,7 @@ public class UserDaoJdbcImpl implements UserDao {
         String sql = "create table users (id serial primary key, name varchar(50) not null, last_name varchar(50) not null, age int not null);";
         try (Statement statement = conn.createStatement()) {
             statement.execute(sql);
-            System.out.println("Table was created in the database");
+            System.out.println("User table was created successfully");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -51,7 +50,7 @@ public class UserDaoJdbcImpl implements UserDao {
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setLong(1, id);
             ps.executeUpdate();
-            System.out.println("Current row id: " + id + " was deleted from the table");
+            System.out.println("Current id: " + id + " was deleted from the table");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

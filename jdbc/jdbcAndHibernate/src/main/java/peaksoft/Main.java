@@ -10,8 +10,8 @@ public class Main {
 
     public static void main(String[] args) {
         UserService userService = new UserServiceImpl();
-        commands();
         while (true) {
+            commands();
             int a = getButton();
             if (a == 1) {
                 userService.createUsersTable();
